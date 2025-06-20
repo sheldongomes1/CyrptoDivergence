@@ -15,6 +15,6 @@ PUSHSHIFT_URL = "https://api.pushshift.io/reddit/search/submission/"
 
 
 # ========== APP TITLE ==========
-st.set_page_config(page_title="Narrative Divergence Detector", layout="wide")
-st.title("Narrative Divergence Detector (MVP)")
+st.set_page_config(page_title="Crypto Narrative Divergence Detector", layout="wide")
+st.title("Crypto Narrative Divergence Detector (MVP)")
 st.markdown("Track crypto narratives vs price movements — identify divergence and AI-generated insights.")
