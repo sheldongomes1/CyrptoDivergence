@@ -3,7 +3,7 @@
 
 import streamlit as st
 import pandas as pd
-import requests
+import requests as r
 import datetime
 import matplotlib.pyplot as plt
 import time
