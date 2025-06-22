@@ -6,8 +6,6 @@ import pandas as pd
 import requests
 import datetime
 import matplotlib.pyplot as plt
-from github import Github
-
 # ========== CONFIGURATION ==========
 COINGECKO_API = "https://api.coingecko.com/api/v3"
 DEFAULT_TOKENS = ["bitcoin", "ethereum", "solana"]
