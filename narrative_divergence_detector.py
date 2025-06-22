@@ -41,7 +41,7 @@ def fetch_price_data(token_id, days):
     #df = pd.DataFrame(prices, columns=["timestamp", "price"])
     #df["date"] = pd.to_datetime(df["timestamp"], unit="ms")
     #df = df.set_index("date")["price"]
-    return df
+    return 1
 
 
 # ========== MAIN DISPLAY ==========
