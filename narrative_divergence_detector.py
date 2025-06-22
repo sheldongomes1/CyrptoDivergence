@@ -34,7 +34,7 @@ def fetch_price_data(token_id, days):
     return df
 
 for token in tokens:
-    st.subheader(f"📈 {token.title()}")
+    st.subheader(f"{token.title()}")
     price_data = fetch_price_data(token, days_back)
     if price_data is None:
         st.warning(f"Failed to fetch price data for {token}.")
