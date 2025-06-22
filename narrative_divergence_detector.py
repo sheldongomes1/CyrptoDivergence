@@ -7,7 +7,7 @@ import requests
 import datetime
 import matplotlib.pyplot as plt
 # ========== CONFIGURATION ==========
-COINGECKO_API = "https://api.coingecko.com/api/v3"
+COINGECKO_API = "https://api.coingecko.com/api/v3/coins/"
 DEFAULT_TOKENS = ["bitcoin", "ethereum", "solana"]
 GITHUB_REPOS = {
     "bitcoin": "bitcoin/bitcoin",
@@ -16,7 +16,7 @@ GITHUB_REPOS = {
 }
 REDDIT_SUBS = ["cryptocurrency", "ethfinance", "solana"]
 PUSHSHIFT_URL = "https://api.pushshift.io/reddit/search/submission/"
-
+days=7
 # ========== APP TITLE ==========
 st.set_page_config(page_title="Narrative Divergence Detector", layout="wide")
 st.title("Narrative Divergence Detector (MVP)")
@@ -30,8 +30,8 @@ days_back = st.sidebar.slider("Days of History", 7, 30, 14)
 # ========== DATA FETCHING ==========
 @st.cache_data(show_spinner=False)
 def fetch_price_data(token_id, days):
-    url = f"{COINGECKO_API}/coins/{token_id}/market_chart"
-    url = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=daily"
+    url = f"{COINGECKO_API}/{token_id}/market_chart"
+    #url = "https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=7&interval=daily"
     params = {"vs_currency": "usd", "days": days, "interval": "daily"}
     r = requests.get(url, params=params)
     if r.status_code != 200:
