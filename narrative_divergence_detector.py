@@ -19,6 +19,11 @@ st.set_page_config(page_title="Crypto Narrative Divergence Detector", layout="wi
 st.title("Crypto Narrative Divergence Detector (MVP)")
 st.markdown("Track crypto narratives vs price movements — identify divergence and AI-generated insights.")
 
+# ========== INPUTS ==========
+st.sidebar.header("Configuration")
+tokens = st.sidebar.multiselect("Select Tokens to Analyze", DEFAULT_TOKENS, default=DEFAULT_TOKENS)
+days_back = st.sidebar.slider("Days of History", 7, 30, 14)
+
 # ========== DATA FETCHING ==========
 @st.cache_data(show_spinner=False)
 def fetch_price_data(token_id, days):
