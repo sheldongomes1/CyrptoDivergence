@@ -37,7 +37,7 @@ def fetch_price_data(token_id, days):
     if r.status_code != 200:
         return None
     prices = r.json()['prices']
-    st.subheader(f"{prices}")
+    st.markdown(f"{prices}")
     #df = pd.DataFrame(prices, columns=["timestamp", "price"])
     #df["date"] = pd.to_datetime(df["timestamp"], unit="ms")
     #df = df.set_index("date")["price"]
