@@ -37,11 +37,11 @@ def fetch_price_data(token_id, days):
     if r.status_code != 200:
         return None
     prices = r.json()['prices']
-    st.markdown(f"{prices}")
-    #df = pd.DataFrame(prices, columns=["timestamp", "price"])
-    #df["date"] = pd.to_datetime(df["timestamp"], unit="ms")
-    #df = df.set_index("date")["price"]
-    return 1
+    #st.markdown(f"{prices}")
+    df = pd.DataFrame(prices, columns=["timestamp", "price"])
+    df["date"] = pd.to_datetime(df["timestamp"], unit="ms")
+    df = df.set_index("date")["price"]
+    return df
 
 
 # ========== MAIN DISPLAY ==========
@@ -51,4 +51,5 @@ for token in tokens:
     #if price_data is None:
     #    st.warning(f"Failed to fetch price data for {token}.")
     #    continue
-    #price_change = ((price_data[-1] - price_data[0]) / price_data[0]) * 100
+    price_change = ((price_data[-1] - price_data[0]) / price_data[0]) * 100
+    st.markdown(f"{price_change}")
